@@ -1,10 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Epackageregistry
+Bundle-Name: EMF Utils - Observable EPackage Registry Plugin
 Bundle-SymbolicName: fr.inria.atlanmod.emf.packageregistry;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.1.0.qualifier
 Bundle-Activator: fr.inria.atlanmod.emf.packageregistry.ObservableEPackageRegistryPlugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
+Bundle-Vendor: AtlanMod - Inria
