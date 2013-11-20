@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="fr.inria.atlanmod.emf.utils.ui.packageRegistry"
+            name="Neo4EMF">
+      </category>
+      <view
+            category="fr.inria.atlanmod.emf.utils.ui.packageRegistry"
+            class="fr.inria.atlanmod.emf.utils.ui.views.PackageRegistryView"
+            icon="icons/view16/view_icon.gif"
+            id="fr.inria.atlanmod.emf.utils.ui.views.PackageRegistryView"
+            name="EMF Package Registry">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="fr.inria.atlanmod.emf.utils.ui.editors.ReadOnlyEcoreEditor"
+            contributorClass="fr.inria.atlanmod.emf.utils.ui.editors.DummyActionBarContributor"
+            default="false"
+            icon="platform:/plugin/org.eclipse.emf.ecore.editor/icons/full/obj16/EcoreModelFile.gif"
+            id="fr.inria.atlanmod.emf.utils.ui.readonlyEcoreEditor"
+            name="Read-only Ecore Editor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="fr.inria.atlanmod.emf.utils.ui.commands.RegisterEPackageCommand"
+            id="fr.inria.atlanmod.emf.utils.ui.registerEPackage"
+            name="Add to &amp;EPackages registry...">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any?endof=additions">
+         <menu
+               label="EMF &amp;Utils">
+            <command
+                  commandId="fr.inria.atlanmod.emf.utils.ui.registerEPackage"
+                  style="push">
+               <visibleWhen>
+                  <with
+                        variable="activeMenuSelection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.eclipse.core.resources.IResource">
+                           <and>
+                              <test
+                                    property="org.eclipse.core.resources.extension"
+                                    value="ecore">
+                              </test>
+                              <test
+                                    property="fr.inria.atlanmod.emf.utils.ui.isEcoreResource"
+                                    value="true">
+                              </test>
+                           </and>
+                        </adapt>
+                     </iterate>
+                  </with>
+               </visibleWhen>
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="fr.inria.atlanmod.emf.utils.ui.tester.EcoreResourcePropertyTester"
+            id="fr.inria.atlanmod.emf.utils.ui.isEcoreResource"
+            namespace="fr.inria.atlanmod.emf.utils.ui"
+            properties="isEcoreResource"
+            type="org.eclipse.core.resources.IFile">
+      </propertyTester>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="fr.inria.atlanmod.emf.utils.ui.preferences.RootPreferencePage"
+            id="fr.inria.atlanmod.emf.utils.ui.preferences.Root"
+            name="AtlanMod EMF Utils">
+      </page>
+      <page
+            category="fr.inria.atlanmod.emf.utils.ui.preferences.Root"
+            class="fr.inria.atlanmod.emf.utils.ui.preferences.AutoloadEPackagesPreferencePage"
+            id="fr.inria.atlanmod.emf.utils.ui.preferences.AutoloadEPackagesPreferencePage"
+            name="Auto-loaded EPackages">
+      </page>
+   </extension>
+</plugin>
