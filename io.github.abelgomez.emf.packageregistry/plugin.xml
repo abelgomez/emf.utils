@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.ecore.package_registry_implementation">
+      <registry
+            class="io.github.abelgomez.emf.packageregistry.impl.ObservableEPackageRegistryImpl">
+      </registry>
+   </extension>
+</plugin>
