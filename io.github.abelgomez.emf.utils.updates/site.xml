@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/io.github.abelgomez.emf.packageregistry.feature_0.2.0.201509291959.jar" id="io.github.abelgomez.emf.packageregistry.feature" version="0.2.0.201509291959">
+   <feature url="features/io.github.abelgomez.emf.packageregistry.feature_0.2.0.201509292020.jar" id="io.github.abelgomez.emf.packageregistry.feature" version="0.2.0.201509292020">
       <category name="EMF Utils"/>
    </feature>
-   <feature url="features/io.github.abelgomez.emf.utils.feature_0.2.0.201509291959.jar" id="io.github.abelgomez.emf.utils.feature" version="0.2.0.201509291959">
+   <feature url="features/io.github.abelgomez.emf.utils.feature_0.2.0.201509292020.jar" id="io.github.abelgomez.emf.utils.feature" version="0.2.0.201509292020">
       <category name="EMF Utils"/>
    </feature>
    <category-def name="EMF Utils" label="EMF Utils"/>
