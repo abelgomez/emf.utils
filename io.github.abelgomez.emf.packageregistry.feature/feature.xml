@@ -5,7 +5,7 @@
       version="0.2.0.qualifier">
 
    <description url="http://abelgomez.github.io/emf.utils/">
-      This feature provides an alternative implementation of the EPackage Registry of EMF that can ve observed to listen for changes in the registry. Warning: Only one plugin can use the extension point &quot;org.eclipse.emf.ecore.package_registry_implementation&quot; which allows to override the default implementation.
+      This feature provides an alternative implementation of the EPackage Registry of EMF that can be observed to listen for changes in the registry. Warning: Only one plugin can use the extension point &quot;org.eclipse.emf.ecore.package_registry_implementation&quot; which allows to override the default implementation.
    </description>
 
    <copyright url="http://abelgomez.github.io">
